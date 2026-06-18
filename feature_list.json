@@ -1,0 +1,75 @@
+{
+  "safe_features_used": [
+    "land_area_acres",
+    "historical_repayment_score",
+    "annual_income_inr",
+    "liability_ratio_pct",
+    "crop_type",
+    "pm_kisan_status",
+    "irrigation_type",
+    "land_ownership"
+  ],
+  "excluded_features": {
+    "rainfall_deviation_pct": "ASSUMPTION: Season-end rainfall deviation is UNKNOWN at scoring time for the current season. Using prior-season value if available is an approximation. EXCLUDED from model to avoid leakage.",
+    "ndvi_score": "ASSUMPTION: NDVI from satellite imagery at harvest is UNKNOWN at loan-application time. EXCLUDED from model to avoid leakage.",
+    "defaulted_in_next_12_months": "CRITICAL LEAKAGE \u2013 this is a future outcome label. Including it as a feature would allow the model to directly 'see' whether the farmer defaulted, producing artificially perfect metrics that vanish at deployment. EXCLUDED."
+  },
+  "feature_metadata": {
+    "land_area_acres": {
+      "type": "numeric",
+      "available_before_scoring": true,
+      "note": "Land record (khasra/patta) \u2013 pre-existing at application time."
+    },
+    "crop_type": {
+      "type": "categorical",
+      "available_before_scoring": true,
+      "note": "Declared by farmer at application; confirmed via mandi/FPO records."
+    },
+    "pm_kisan_status": {
+      "type": "categorical",
+      "available_before_scoring": true,
+      "note": "PM Kisan beneficiary flag from govt DB \u2013 queryable before disbursal.",
+      "CAUTION": "May update during the loan tenure; use status as-of application date only."
+    },
+    "historical_repayment_score": {
+      "type": "numeric",
+      "available_before_scoring": true,
+      "note": "Credit bureau / cooperative history \u2013 computed before application."
+    },
+    "irrigation_type": {
+      "type": "categorical",
+      "available_before_scoring": true,
+      "note": "Land record attribute \u2013 available pre-scoring."
+    },
+    "land_ownership": {
+      "type": "categorical",
+      "available_before_scoring": true,
+      "note": "Land record \u2013 available pre-scoring."
+    },
+    "annual_income_inr": {
+      "type": "numeric",
+      "available_before_scoring": true,
+      "note": "Self-declared / PMFBY estimate. May require verification."
+    },
+    "liability_ratio_pct": {
+      "type": "numeric",
+      "available_before_scoring": true,
+      "note": "Existing loan obligations \u2013 credit bureau."
+    },
+    "rainfall_deviation_pct": {
+      "type": "numeric",
+      "available_before_scoring": false,
+      "note": "ASSUMPTION: Season-end rainfall deviation is UNKNOWN at scoring time for the current season. Using prior-season value if available is an approximation. EXCLUDED from model to avoid leakage."
+    },
+    "ndvi_score": {
+      "type": "numeric",
+      "available_before_scoring": false,
+      "note": "ASSUMPTION: NDVI from satellite imagery at harvest is UNKNOWN at loan-application time. EXCLUDED from model to avoid leakage."
+    },
+    "defaulted_in_next_12_months": {
+      "type": "target_proxy",
+      "available_before_scoring": false,
+      "note": "CRITICAL LEAKAGE \u2013 this is a future outcome label. Including it as a feature would allow the model to directly 'see' whether the farmer defaulted, producing artificially perfect metrics that vanish at deployment. EXCLUDED."
+    }
+  }
+}
