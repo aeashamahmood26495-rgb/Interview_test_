@@ -1,0 +1,16 @@
+{
+  "random_holdout": {
+    "n": 722,
+    "r2": 0.6967,
+    "mae": 47.4187,
+    "note": "Random split within historical years. May be optimistic."
+  },
+  "temporal_holdout": {
+    "n": 1394,
+    "year": 2024,
+    "r2": 0.6869,
+    "mae": 48.3484,
+    "note": "Holdout on the most-recent year. Better simulation of deployment. Trust this metric more than the random holdout. Limitation: single-year holdout; vulnerable to year-specific effects."
+  },
+  "policy_note": "Validation metrics are computed on RAW model predictions (before policy adjustment). Policy rules (PM Kisan deduction) are applied post-prediction in production, not during training."
+}
