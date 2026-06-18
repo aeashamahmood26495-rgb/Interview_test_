@@ -1,0 +1,22 @@
+{
+  "training_script": "fixed_yogyank_training.py",
+  "trained_at_utc": "2026-06-18T16:33:15.343641+00:00",
+  "random_seed": 42,
+  "validation_year": 2024,
+  "features": [
+    "land_area_acres",
+    "historical_repayment_score",
+    "annual_income_inr",
+    "liability_ratio_pct",
+    "crop_type",
+    "pm_kisan_status",
+    "irrigation_type",
+    "land_ownership"
+  ],
+  "target": "target_entitlement_score",
+  "model_class": "XGBRegressor",
+  "pipeline_steps": [
+    "OrdinalEncoder (ColumnTransformer)",
+    "XGBRegressor"
+  ]
+}
