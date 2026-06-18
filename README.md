@@ -3,8 +3,8 @@
 ## Timing
 | | |
 |---|---|
-| Start time (IST) | *(record your start time here)* |
-| End time (IST) | *(record your end time here)* |
+| Start time (IST) | *10:00 PM* |
+| End time (IST) | *11:15 PM* |
 | Approximate time spent | ~90 minutes |
 
 ---
