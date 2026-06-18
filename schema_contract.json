@@ -1,0 +1,76 @@
+{
+  "input_features": {
+    "land_area_acres": {
+      "dtype": "float64",
+      "sample_values": null,
+      "range": [
+        0.41,
+        18.0
+      ]
+    },
+    "historical_repayment_score": {
+      "dtype": "float64",
+      "sample_values": null,
+      "range": [
+        0.0,
+        100.0
+      ]
+    },
+    "annual_income_inr": {
+      "dtype": "float64",
+      "sample_values": null,
+      "range": [
+        80412.07,
+        649743.54
+      ]
+    },
+    "liability_ratio_pct": {
+      "dtype": "float64",
+      "sample_values": null,
+      "range": [
+        0.02,
+        42.0
+      ]
+    },
+    "crop_type": {
+      "dtype": "str",
+      "sample_values": [
+        "Soybean",
+        "Wheat",
+        "Cotton",
+        "Sugarcane",
+        "Rice"
+      ],
+      "range": null
+    },
+    "pm_kisan_status": {
+      "dtype": "str",
+      "sample_values": [
+        "Yes",
+        "No"
+      ],
+      "range": null
+    },
+    "irrigation_type": {
+      "dtype": "str",
+      "sample_values": [
+        "Irrigated",
+        "Rainfed"
+      ],
+      "range": null
+    },
+    "land_ownership": {
+      "dtype": "str",
+      "sample_values": [
+        "Owned",
+        "Tenant"
+      ],
+      "range": null
+    }
+  },
+  "target": "target_entitlement_score",
+  "target_range_observed": [
+    421.76,
+    980.0
+  ]
+}
