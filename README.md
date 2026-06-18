@@ -5,7 +5,7 @@
 |---|---|
 | Start time (IST) | *10:00 PM* |
 | End time (IST) | *11:15 PM* |
-| Approximate time spent | ~90 minutes |
+| Approximate time spent | ~75 minutes |
 
 ---
 
